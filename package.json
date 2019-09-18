@@ -2,7 +2,7 @@
   "name": "gitstats",
   "description": "github organization stats",
   "version": "0.0.0",
-  "author": "Travis @elbandito",
+  "author": "@elbandito",
   "bin": {
     "gitstats": "./bin/run"
   },
