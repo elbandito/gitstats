@@ -17,7 +17,7 @@ ARGUMENTS
 
 OPTIONS
   -a, --auth                                   authenticate with github
-  -l, --limit=limit                            number of repos to display (max of 50 is allowed)
+  -l, --limit=limit                            number of repos to display (default is 10)
   --columns=columns                            only show provided columns (comma-separated)
   --csv                                        output is csv format
 
@@ -38,7 +38,6 @@ EXAMPLES
   $ gitstats github-org --columns='repo,prs'       --sort='-prs'
   $ gitstats github-org --columns='repo,prs/forks' --sort='-prs/forks'
 ```
-
 To Run Locally
 
 `$ ./bin/run oclif COMMAND`

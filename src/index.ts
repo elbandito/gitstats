@@ -45,6 +45,10 @@ class Gitstats extends Command {
     const {args, flags} = this.parse(Gitstats)
     this._flags = flags
 
+    if (flags.limit && flags.limit > 50) {
+      cli.error('--limit cannot be greater than 50')
+    }
+
     const octokit = await this.createOctokit(flags.auth)
     const orgStats = await this.getOrgStats(octokit, args.org, flags.limit)
 
@@ -52,7 +56,7 @@ class Gitstats extends Command {
       return this.warn(`No data available for ${color.blue(args.org)}.  If this is a private org, try using --auth`)
     }
 
-    cli.table(orgStats, Gitstats.tableHeaders,       {
+    cli.table(orgStats, Gitstats.tableHeaders, {
       printLine: this.log,
       ...this._flags,
     })
@@ -63,7 +67,7 @@ class Gitstats extends Command {
     try {
       const repos = await octokit.repos.listForOrg({
         org,
-        per_page: limit > 100 ? 100 : limit
+        per_page: limit
       })
 
       await Promise.all(repos.data.map(async (repo: Octokit.ReposListForOrgResponseItem) => {
