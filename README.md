@@ -33,6 +33,9 @@ DESCRIPTION
 
 EXAMPLES
   $ gitstats github-org --limit=20 --auth
-  $ gitstats github-org --columns='repo,stars' --sort='forks' 
+  $ gitstats github-org --columns='repo,stars'     --sort='-stars --csv'
+  $ gitstats github-org --columns='repo,forks'     --sort='-forks'
+  $ gitstats github-org --columns='repo,prs'       --sort='-prs'
+  $ gitstats github-org --columns='repo,prs/forks' --sort='-prs/forks'
 ```
 

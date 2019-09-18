@@ -39,9 +39,11 @@ class Gitstats extends Command {
     pullRequests: {header: 'PRs'},
     pullRequestsToForks: {header: 'PRs/forks'}
   }
+  private _flags: any
 
   async run() {
     const {args, flags} = this.parse(Gitstats)
+    this._flags = flags
 
     const octokit = await this.createOctokit(flags.auth)
     const orgStats = await this.getOrgStats(octokit, args.org, flags.limit)
@@ -50,7 +52,10 @@ class Gitstats extends Command {
       return this.warn(`No data available for ${color.blue(args.org)}.  If this is a private org, try using --auth`)
     }
 
-    cli.table(orgStats, Gitstats.tableHeaders, {sort: '-Stars'})
+    cli.table(orgStats, Gitstats.tableHeaders,       {
+      printLine: this.log,
+      ...this._flags,
+    })
   }
 
   private async getOrgStats(octokit: Octokit, org: string, limit: number): Promise<Array<any>> {
