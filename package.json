@@ -8,6 +8,7 @@
   },
   "bugs": "https://github.com/elbandito/gitstats/issues",
   "dependencies": {
+    "@heroku-cli/color": "^1.1.14",
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",

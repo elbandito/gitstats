@@ -32,7 +32,7 @@ DESCRIPTION
   Displays PR stats for github organization
 
 EXAMPLES
-  $ gitstats --org=github-org --auth
-  $ gitstats --org=github-org --columns='repo,stars' --sort='forks' 
+  $ gitstats github-org --limit=20 --auth
+  $ gitstats github-org --columns='repo,stars' --sort='forks' 
 ```
 

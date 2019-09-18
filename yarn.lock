@@ -109,6 +109,17 @@
     reflect-metadata "^0.1.12"
     tslib "^1.8.1"
 
+"@heroku-cli/color@^1.1.14":
+  version "1.1.14"
+  resolved "https://registry.yarnpkg.com/@heroku-cli/color/-/color-1.1.14.tgz#035ac4e48e564fcab37c3dc4bd09dbe596f2ad68"
+  integrity sha512-2JYy//YE2YINTe21hpdVMBNc7aYFkgDeY9JUz/BCjFZmYLn0UjGaCc4BpTcMGXNJwuqoUenw2WGOFGHsJqlIDw==
+  dependencies:
+    ansi-styles "^3.2.1"
+    chalk "^2.4.1"
+    strip-ansi "^5.0.0"
+    supports-color "^5.5.0"
+    tslib "^1.9.3"
+
 "@oclif/command@^1", "@oclif/command@^1.5.1", "@oclif/command@^1.5.13":
   version "1.5.19"
   resolved "https://registry.yarnpkg.com/@oclif/command/-/command-1.5.19.tgz#13f472450eb83bd6c6871a164c03eadb5e1a07ed"

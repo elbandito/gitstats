@@ -1,3 +1,4 @@
+import {color} from '@heroku-cli/color'
 import {Command, flags} from '@oclif/command'
 import * as Octokit from '@octokit/rest'
 import cli from 'cli-ux'
@@ -5,8 +6,8 @@ import cli from 'cli-ux'
 class Gitstats extends Command {
   static description = 'displays PR stats for github organization'
   static examples = [
-    '$ gitstats --org=github-org --auth',
-    '$ gitstats --org=github-org --columns=\'repo,stars\' --sort=\'forks\'',
+    '$ gitstats github-org --auth',
+    '$ gitstats github-org --columns=\'repo,stars\' --sort=\'forks\'',
   ]
 
   static args = [{
@@ -46,7 +47,7 @@ class Gitstats extends Command {
     const orgStats = await this.getOrgStats(octokit, args.org, flags.limit)
 
     if (orgStats.length === 0) {
-      return this.warn(`No data available for ${args.org}.  If this is a private org, try using --auth`)
+      return this.warn(`No data available for ${color.blue(args.org)}.  If this is a private org, try using --auth`)
     }
 
     cli.table(orgStats, Gitstats.tableHeaders, {sort: '-Stars'})
