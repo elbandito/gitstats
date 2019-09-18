@@ -1,7 +1,7 @@
 gitstats
 ========
 
-github organization stats
+github organization stats for PRs
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/gitstats.svg)](https://npmjs.org/package/gitstats-org)
