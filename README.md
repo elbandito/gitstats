@@ -13,7 +13,7 @@ USAGE
   $ gitstats COMMAND
 
 ARGUMENTS
-  ORG                                          github organization name
+  ORG                                          (required) github organization name
 
 OPTIONS
   -a, --auth                                   authenticate with github
