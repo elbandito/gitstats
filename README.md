@@ -40,4 +40,4 @@ EXAMPLES
 ```
 To Run Locally
 
-`$ ./bin/run oclif COMMAND`
+`$ ./bin/run <myorg> --columns='repo,stars' --sort='-stars`
