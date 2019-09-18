@@ -3,7 +3,7 @@ import * as Octokit from '@octokit/rest'
 import cli from 'cli-ux'
 
 class Gitstats extends Command {
-  static description = 'display github org status for PRs'
+  static description = 'displays PR stats for github organization'
   static examples = [
     '$ gitstats --org=github-org --auth',
     '$ gitstats --org=github-org --columns=\'repo,stars\' --sort=\'forks\'',
@@ -20,7 +20,7 @@ class Gitstats extends Command {
     help: flags.help({char: 'h'}),
     limit: flags.integer({
       char: 'l',
-      description: 'number of repos to display',
+      description: 'number of repos to display (max of 50 is allowed)',
       default: 10,
 
     }),
@@ -28,7 +28,7 @@ class Gitstats extends Command {
       description: 'authenticate with github',
       default: false
     }),
-    ...cli.table.flags({except: ['extended', 'csv', 'filter']})
+    ...cli.table.flags({except: ['extended', 'filter']})
   }
 
   static tableHeaders = {
