@@ -39,3 +39,6 @@ EXAMPLES
   $ gitstats github-org --columns='repo,prs/forks' --sort='-prs/forks'
 ```
 
+To Run Locally
+
+`$ ./bin/run oclif COMMAND`
